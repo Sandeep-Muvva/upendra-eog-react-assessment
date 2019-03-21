@@ -1,4 +1,4 @@
 import WeatherSagas from "./Weather";
 import ApiErrors from "./ApiErrors";
-
-export default [...ApiErrors, ...WeatherSagas];
+import DronePositionSagas from './DroneTracker';
+export default [...ApiErrors, ...WeatherSagas,...DronePositionSagas];
