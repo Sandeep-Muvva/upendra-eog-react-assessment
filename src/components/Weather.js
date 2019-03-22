@@ -54,8 +54,8 @@ const mapDispatch = dispatch => ({
   onLoad: () =>
     dispatch({
       type: actions.FETCH_WEATHER,
-      longitude: -95.3698,
-      latitude: 29.7604
+      longitude: -95.36327,
+      latitude: 29.76328
     })
 });
 

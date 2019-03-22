@@ -2,8 +2,8 @@ import * as actions from "../actions";
 
 const initialState = {
   loading: false,
-  latitude: null,
-  longitude:null
+  latitude: 29.76328,
+  longitude:-95.36327
 };
 const startLoading = (state, action) => {
   return { 

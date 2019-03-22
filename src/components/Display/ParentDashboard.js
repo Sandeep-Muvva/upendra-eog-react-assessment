@@ -6,18 +6,12 @@ import * as actions from './../../store/actions'
 import {connect} from 'react-redux';
 
 class ParentDashboard extends React.Component{
-    state={
-        prev_time:0,
-        curr_time:0
-    };
     componentDidMount(){
         this.reload=setInterval(()=>this.props.onLoad()
     ,4000); 
     }
   
- //   componentWillUnMount(){
-  //      clearInterval(this.reload);
-  //  }
+
     render(){
         const {
             loading,

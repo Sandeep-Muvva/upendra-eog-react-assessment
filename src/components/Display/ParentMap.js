@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from './../../store/actions';
 
-import Map from './Map';
+import MapContainer from './MapContainer';
 import LinearProgress from '@material-ui/core/LinearProgress';
  
 class ParentMap extends React.Component{
@@ -29,7 +29,7 @@ componentDidMount(){
  
  
     return(
-        <Map
+        <MapContainer
             label={`Weather in ${name} : ${weather_state_name}`}
             temperature={`${temperatureinFahrenheit}`}
             latitude={this.props.drone.latitude}
