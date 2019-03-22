@@ -13,10 +13,6 @@ state={
 componentDidMount(){
     this.reload=setInterval(()=>this.props.onLoad(),4000);
 }
-//componentWillUnMount(){
- //   clearInterval(this.reload);
-
-//}
     render() {
         const {
           loading,

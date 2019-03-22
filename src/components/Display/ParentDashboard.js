@@ -6,11 +6,29 @@ import * as actions from './../../store/actions'
 import {connect} from 'react-redux';
 
 class ParentDashboard extends React.Component{
+constructor(props){
+    super(props);
+  this.state={
+    curr_time:Date.now(),
+    prev_time:Date.now()
+};
+
+}
+
+ update=()=>{
+    const var1=Date.now();
+    this.setState((prevState)=>({
+        prev_time:prevState.curr_time,
+        curr_time:var1
+    }))
+}
     componentDidMount(){
-        this.reload=setInterval(()=>this.props.onLoad()
-    ,4000); 
+        this.reload=setInterval(()=>{
+            this.props.onLoad();
+            this.update();
+        },4000); 
+    
     }
-  
 
     render(){
         const {
@@ -27,7 +45,7 @@ class ParentDashboard extends React.Component{
             temperature={`${temperatureinFahrenheit}`}
             latitude={this.props.drone.latitude }
             longitude={this.props.drone.longitude}
-            updated={this.state.curr_time-this.state.prev_time}
+            updateTime={(Math.floor((this.state.curr_time-this.state.prev_time)/1000))}
             />
     );
  }
@@ -37,14 +55,14 @@ const mapStateToProps=(state)=>{
     return{
         weather: state.weather,
         drone:state.drone
-
+        }
     };
-};
 const mapDispatch=(dispatch)=>({
-    onLoad:()=>
+    onLoad:()=>{
     dispatch({
         type:actions.FETCH_DRONE
     })
+    }
 });
 
 export default connect(

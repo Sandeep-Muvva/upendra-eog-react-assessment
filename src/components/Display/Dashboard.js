@@ -43,7 +43,7 @@ const cardStyles = theme => ({
           </ListItem>
 
           <ListItem>
-             <ListItemText primary="Updated" secondary={`4 seconds ago`} />
+             <ListItemText primary="Updated" secondary={props.updateTime+` seconds ago`} />
           </ListItem>
         </List>
       </CardContent>

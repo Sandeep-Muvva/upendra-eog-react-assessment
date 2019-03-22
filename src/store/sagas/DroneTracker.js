@@ -15,7 +15,6 @@ function* watchFetchDronePosition(action) {
 }
 
 function* watchDroneDataReceived(action) {
-  console.log("action",action);
   const { latitude, longitude } = action.curr;
   const { error, data } = yield call(
     API.findLocationByLatLng,
